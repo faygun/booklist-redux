@@ -4,10 +4,3 @@ export function selectBox(book){
         payload:book
     };
 }
-
-export function selectOneBox(book){
-    return{
-        type:'ONE_BOOK',
-        payload:{title:'Faruk', pages:25}
-    };
-}

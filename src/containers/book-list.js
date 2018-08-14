@@ -5,14 +5,10 @@ import {bindActionCreators} from 'redux';
 class BookList extends Component{
 
     renderList(){
-        var title = "";
-        if(this.props.oneBook)
-         title = this.props.oneBook.title;
         return this.props.books.map((book) => {
             return(
-                <li key={book.title} onClick={()=> this.props.selectBox(book)} className="list-group-item">
+                <li key={book.title} onClick={()=> this.props.selectBox(book)} className="list-group-item sortable">
                     {book.title}
-                    {title}
                 </li>
             );
         });
@@ -29,8 +25,7 @@ class BookList extends Component{
 
 function mapStateToProps(state){
     return{
-        books:state.books,
-        oneBook:state.oneBook
+        books:state.books
     };
 }
 
